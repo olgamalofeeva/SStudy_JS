@@ -6,5 +6,5 @@ var mission = 'goal';
 var period = 'year';
 
 alert ('My dreames!');
-alert ('are coming');
+console.log ('are coming');
 
