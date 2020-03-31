@@ -50,8 +50,19 @@ if (budgetDay >= 1200) {
     console.log('Что то пошло не так');  
 }
 
+const getExpensesMonth = function (a, b) {
+    return a + b;
+};
+
+console.log(getExpensesMonth(Number(amount1), Number(amount2)));
 
 
+function getAccumulatedMonth (a, b, c) {
+    return a - (b + c);
+};
+
+let accumulatedMonth = getAccumulatedMonth(Number(money), Number(amount1), Number(amount2));
+console.log(accumulatedMonth);
 
 
 
