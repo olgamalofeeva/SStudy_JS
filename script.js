@@ -38,7 +38,7 @@ const getExpensesMonth = function () {
         expenses[i]= prompt ('Введите обязательную статью расходов?'); 
        
         do {
-            sum += prompt('Во сколько это обойдется?');
+            sum += +prompt('Во сколько это обойдется?');
         }
         while (!isNumber(sum));
     }
@@ -47,7 +47,7 @@ const getExpensesMonth = function () {
 };
 
 let expensesAmount = getExpensesMonth();
-console.log('Расходы за месяц: ' + expensesAmount, typeof(expensesAmount));
+console.log('Расходы за месяц: ' + expensesAmount);
 
 
 function getAccumulatedMonth () {
