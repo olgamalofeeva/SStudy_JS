@@ -1,36 +1,16 @@
-let lang_en = 'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday';
-let lang_ru = 'Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье';
-
-let lang = confirm('Ваш язык русский?');
-console.log(lang);
-
-if (lang === true) {
-    console.log(lang_ru);
-} else if (lang === false) {
-    console.log(lang_en);
-}
-
-switch (lang) {
-    case true:
-        console.log (lang_ru);
-        break;
-    default:
-        console.log (lang_en);   
-}
-
-const language = {
-    en: 'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday',
-    ru: 'Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье'
+const showMessage = function () {
+   if (typeof a == 'string') {
+       return (a);
+    } else {
+    return ('функция передана неверно');
+};
 };
 
-console.log(language.en);
+String.prototype.trunc = String.prototype.trunc ||
+      function(n){
+          return (this.length > n) ? this.substr(0, n-1) + '...' : this;
+      };
 
-let namePerson = 'Кирилл';
+var a = 'он отлично работает, ну вот как мне задать если в БД больше 30 символов, чтобы не просто обрезалось кол во символов, а было многоточие в конце на php спасибо. Если вопросы, спрашивайте.';
 
-let result01 = namePerson === 'Артем' ? 'директор':'студент';
-console.log(result01);
-let result02 = namePerson === 'Максим' ? 'преподаватель':'студент';
-console.log(result02);
-
-
-
+console.log(showMessage().trunc(30).trim());
