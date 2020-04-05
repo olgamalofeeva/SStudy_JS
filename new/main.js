@@ -1,23 +1,9 @@
-const funcNumber = function() {
-    const q = prompt ('Угадай число от 1 до 100');
-    
-const one = function (n) {
-    if (q > n) {
-        return (alert('Загаданное число меньше'));
-    } else if (q < n) {
-        return (alert('Загаданное число больше'));
-    } else if (q == n) {
-        return (alert ('Ты выиграл!'));
-    } else if (q != Number) {
-        function two(){
-             return (b = prompt ('Введите число'));}
-        two(q);     
-    } else {
-        return (alert('Game over'));
-    }
-    }
-    return (one(9));
-};
+let week = ['Понедельник', 'Вторник', 'Среда' , 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
 
-console.log(funcNumber());
-
+document.write(week[0].italics() + '<br>');
+document.write(week[1].italics() + '<br>');
+document.write(week[2].italics() + '<br>');
+document.write(week[3].italics() + '<br>');
+document.write(week[4].italics() + '<br>');
+document.write(week[5].italics() + '<br>');
+document.write(week[6].italics().bold() + '<br>');
