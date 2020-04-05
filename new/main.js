@@ -1,16 +1,23 @@
-const showMessage = function () {
-   if (typeof a == 'string') {
-       return (a);
+const funcNumber = function() {
+    const q = prompt ('Угадай число от 1 до 100');
+    
+const one = function (n) {
+    if (q > n) {
+        return (alert('Загаданное число меньше'));
+    } else if (q < n) {
+        return (alert('Загаданное число больше'));
+    } else if (q == n) {
+        return (alert ('Ты выиграл!'));
+    } else if (q != Number) {
+        function two(){
+             return (b = prompt ('Введите число'));}
+        two(q);     
     } else {
-    return ('функция передана неверно');
+        return (alert('Game over'));
+    }
+    }
+    return (one(9));
 };
-};
 
-String.prototype.trunc = String.prototype.trunc ||
-      function(n){
-          return (this.length > n) ? this.substr(0, n-1) + '...' : this;
-      };
+console.log(funcNumber());
 
-var a = 'он отлично работает, ну вот как мне задать если в БД больше 30 символов, чтобы не просто обрезалось кол во символов, а было многоточие в конце на php спасибо. Если вопросы, спрашивайте.';
-
-console.log(showMessage().trunc(30).trim());
