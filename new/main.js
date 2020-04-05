@@ -1,9 +1,40 @@
-let week = ['Понедельник', 'Вторник', 'Среда' , 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+'use strict';
 
-document.write(week[0].italics() + '<br>');
-document.write(week[1].italics() + '<br>');
-document.write(week[2].italics() + '<br>');
-document.write(week[3].italics() + '<br>');
-document.write(week[4].italics() + '<br>');
-document.write(week[5].italics() + '<br>');
-document.write(week[6].italics().bold() + '<br>');
+let isNum = function(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+const getRandomNum = function(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+const gameRandom = function() {
+    const randomNum = getRandomNum(1, 100); //получаем рандомное число
+    return function checkNumber() {
+        const userNumber = prompt('Угадай число от 1 до 100?');
+
+        if (isNum(userNumber)) {
+            const num = +userNumber;
+            if (num > randomNum) {
+                alert ('Загаданное число меньше');
+                return checkNumber();
+            } else if (num < randomNum) {
+                alert ('Загаданное число больше');
+                return checkNumber();
+            }
+            confirm('Ура! Вы отгадали число!');
+            
+        } else {
+            if(userNumber === null) return alert ('Пока друг!');
+            alert('Введите число!');
+            checkNumber();
+        }
+    }
+    }
+
+    const game = gameRandom();
+    game();
+
+
