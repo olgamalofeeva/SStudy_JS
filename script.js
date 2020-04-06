@@ -56,8 +56,8 @@ let appData = {
         return appData.mission / appData.budgetMonth();
     },
     statusMission: function() {
-        if (appData.targetMonth >= 0) {
-            return ('Цель будет достигунта за: ' + Math.ceil(appData.targetMonth) + ' месяцев');
+        if (appData.targetMonth() >= 0) {
+            return ('Цель будет достигунта за: ' + Math.ceil(appData.targetMonth()) + ' месяцев');
     } else {
             return ('Цель не будет достигнута');
     }
@@ -65,9 +65,9 @@ let appData = {
     statusIncome: function() {
         if (appData.budgetDay() >= 1200) {
             return ('У вас высокий уровень дохода');
-    } else if (appData.budgetDay() >= 600 && appData.budgetDay < 1200) {
+    } else if (appData.budgetDay() >= 600 && appData.budgetDay() < 1200) {
             return ('У вас средний уровень дохода');
-    } else if (appData.budgetDay() > 0 && appData.budgetDay < 600) {
+    } else if (appData.budgetDay() > 0 && appData.budgetDay() < 600) {
             return ('К сожалению у вас уровень дохода ниже среднего');
     } else {
             return ('Что то пошло не так');  
@@ -87,6 +87,6 @@ console.log('Расходы за месяц: ' + appData.expensesMonth());
 console.log(appData.statusMission());
 console.log(appData.statusIncome());
 
-for (let key in appData) {
+/*for (let key in appData) {
         console.log('Наша программа включает в себя данные: ' + key + ' значение:' + appData[key]);
-        }
+        }*/
