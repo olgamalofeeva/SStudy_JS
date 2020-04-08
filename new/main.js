@@ -1,69 +1,62 @@
-// // const funcNumber = function() {
-// //     const q = prompt ('Угадай число от 1 до 100');
-    
-// // const one = function (n) {
-// //     if (q > n) {
-// //         return (alert('Загаданное число меньше'));
-// //     } else if (q < n) {
-// //         return (alert('Загаданное число больше'));
-// //     } else if (q == n) {
-// //         return (alert ('Ты выиграл!'));
-// //     } else if (q != Number) {
-// //         function two(){
-// //              return (b = prompt ('Введите число'));}
-// //         two(q);     
-// //     } else {
-// //         return (alert('Game over'));
-// //     }
-// //     }
-// //     return (one(9));
-// // };
+function clock(){
+  var day = new Date().toLocaleDateString();
+var time = new Date().toLocaleTimeString();
+document.getElementById('clock').innerHTML = day + ' - ' + time;
+}
+setInterval(clock, 1000);
+clock();
 
-// // console.log(funcNumber());
+var d = new Date;
 
-// const addCash = function () {
-//     const cash = {};
+var weekday = new Array(7);
+weekday[0]="Воскресенье";
+weekday[1]="Понедельник";
+weekday[2]="Вторник";
+weekday[3]="Среда";
+weekday[4]="Четверг";
+weekday[5]="Пятница";
+weekday[6]="Суббота";
 
-//     return function(key) {
-//           if(cash[key]) {
-//               console.log(key + 'уже есть в cash');
-//           } else {
-//               cash[key] = 'val: ' + key;
-//               console.log(cash);
-//           }
-//     }
-// };
+var month = new Array(12);
+month[0]="Январь";
+month[1]="Февраль";
+month[2]="Март";
+month[3]="Апреля";
+month[4]="Май";
+month[5]="Июнь";
+month[6]="Июль";
+month[7]="Август";
+month[8]="Сентябрь";
+month[9]="Октябрь";
+month[10]="Ноябрь";
+month[11]="Декабрь";
 
-// const foo = addCash();
 
-// foo('Привет 1');
-// foo('Привет 2');  
-// foo('Привет 3');
-// foo('Привет 4');
-// foo('Привет 5');
-// foo('Привет 1');
+function num2str(n, text_forms) {  
+  n = Math.abs(n) % 100; var n1 = n % 10;
+  if (n > 4 && n < 21) { return text_forms[2]; }
+  if (n1 > 1 && n1 < 5) { return text_forms[1]; }
+  if (n1 = 21) { return text_forms[0]; }
+  if (n1 = 1) { return text_forms[0]; }
+  return text_forms[n];
+}
 
-// let words = ['первый', 'второй', 'третий'];
-// for (let word of words) {
-//     word = word.charAt(0).toUpperCase() + word.substr(1);
-//     console.log(word);
-// }
+var count = d.getHours();
+var hours = count + num2str(count, [' час', ' часа', ' часов']);
 
-function splitString(stringToSplit, separator) {
-    var arrayOfStrings = stringToSplit.split(separator);
-  
-    console.log('Оригинальная строка: "' + stringToSplit + '"');
-    console.log('Разделитель: "' + separator + '"');
-    console.log('Массив содержит ' + arrayOfStrings.length + ' элементов: ' + arrayOfStrings.join(' / '));
-  }
-  
-  // Строчка из «Бури» Шекспира. Перевод Миxаила Донского.
-  var tempestString = 'И как хорош тот новый мир, где есть такие люди!';
-  var monthString = 'Янв,Фев,Мар,Апр,Май,Июн,Июл,Авг,Сен,Окт,Ноя,Дек';
-  
-  var space = ' ';
-  var comma = ',';
-  
-  splitString(tempestString, space);
-  splitString(tempestString);
-  splitString(monthString, comma);
+
+function num2str(n, text_forms) {  
+  n = Math.abs(n) % 100; var n1 = n % 10;
+  if (n > 10 && n < 20) { return text_forms[2]; }
+  if (n1 > 1 && n1 < 5) { return text_forms[1]; }
+  if (n1 == 1) { return text_forms[0]; }
+  return text_forms[2];
+}
+
+var num = d.getMinutes();
+var minutes = num + num2str(num, [' минута', ' минуты', ' минут']);
+
+var sec = d.getMinutes();
+var seconds = sec + num2str(sec, [' секунда', ' секунды', ' секунд']);
+
+document.write('Сегодня ' + weekday[d.getDay()].toLowerCase() + ', ' + d.getDate() + ' ' + month[d.getMonth()].toLowerCase() + ' ' + d.getFullYear() + ' ' + 'года' + ', ' + hours + ' ' + minutes + ' ' + seconds);
