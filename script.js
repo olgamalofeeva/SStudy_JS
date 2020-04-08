@@ -140,4 +140,78 @@ console.log(appData.statusIncome());
 for (let key in appData) {
         console.log('Наша программа включает в себя данные: ' + key + ' значение:' + appData[key]);
         }
-        
+
+const calculateCosts = document.getElementById('start');
+console.log(calculateCosts);
+
+const pressButton1 = document.getElementsByTagName('button')[0];
+console.log(pressButton1);
+
+const pressButton2 = document.getElementsByTagName('button')[1];
+console.log(pressButton2);
+
+const checkBox = document.querySelector('#deposit-check');
+console.log(checkBox);
+
+const inputIncome = document.querySelectorAll('.additional_income-item');
+console.log(inputIncome);
+
+const elementsValue1 = document.querySelector('.budget_day-value');
+console.log(elementsValue1);
+
+const elementsValue2 = document.querySelector('.expenses_month-value');
+console.log(elementsValue2);
+
+const elementsValue3 = document.querySelector('.additional_income-value');
+console.log(elementsValue3);
+
+const elementsValue4 = document.querySelector('.additional_expenses-value');
+console.log(elementsValue4);
+
+const elementsValue5 = document.querySelector('.income_period-value');
+console.log(elementsValue5);
+
+const elementsValue6 = document.querySelector('.target_month-value');
+console.log(elementsValue6);
+
+const inputValue1 = document.querySelector('.budget_month-value');
+console.log(inputValue1);
+
+const inputValue2 = document.querySelector('.period-select');
+console.log(inputValue2);
+
+const inputValue3 = document.querySelector('.salary-amount');
+console.log(inputValue3);
+
+const inputValue4 = document.querySelector('.income-title');
+console.log(inputValue4);
+
+const inputValue5 = document.querySelector('.income-amount');
+console.log(inputValue5);
+
+const inputValue6 = document.querySelector('.additional_income-item');
+console.log(inputValue6);
+
+const inputValue7 = document.querySelectorAll('.additional_income-item');
+console.log(inputValue7);
+
+const inputValue8 = document.querySelector('.expenses-title');
+console.log(inputValue8);
+
+const inputValue9 = document.querySelector('.expenses-amount');
+console.log(inputValue9);
+
+const inputValue10 = document.querySelector('.additional_expenses-item');
+console.log(inputValue10);
+
+const inputValue11 = document.querySelector('#deposit-check');
+console.log(inputValue11);
+
+const inputValue12 = document.querySelector('.deposit-amount');
+console.log(inputValue12);
+
+const inputValue13 = document.querySelector('.deposit-percent');
+console.log(inputValue13);
+
+const inputValue14 = document.querySelector('.target-amount');
+console.log(inputValue14);
