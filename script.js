@@ -40,23 +40,32 @@ let appData = {
         }
         console.log(appData.income);
 
-        let addExpenses = prompt ('Перечислите возможные расходы за рассчитываемый период через запятую');
-        appData.addExpenses = addExpenses.toLowerCase().split(' , ');
-        appData.deposit = confirm('Есть ли у вас депозит в банке?');
+        do{
+            addExpenses = prompt ('Перечислите возможные расходы за рассчитываемый период через запятую');
+        }
+        while (isNumber(addExpenses));
 
+        appData.addExpenses = addExpenses.toLowerCase().split(' , ');
+        
         for (let i = 0; i < appData.addExpenses.length; i++) {
             console.log(appData.addExpenses[i].charAt(0).toUpperCase() + appData.addExpenses[i].substr(1));
         };
             
+        appData.deposit = confirm('Есть ли у вас депозит в банке?');
+
         let sum = 0;
     
         for (let i = 0; i < 3; i++) {
-            var addCosts = prompt ('Введите обязательную статью расходов?');
+            do {
+                var addCosts = prompt ('Введите обязательную статью расходов?');
+            }
+            while (isNumber(addCosts));
             
         do {
             sum = prompt('Во сколько это обойдется?');
             }
         while (!isNumber(sum));
+
         appData.expenses[addCosts] = +sum;
     }
         console.log(appData.expenses);
