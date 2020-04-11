@@ -53,4 +53,49 @@ const foo = function (data, callback) {
   foo('Привет 5');
   foo('Привет 1');
 
+  //события
+
+  let square = document.querySelector('.square');
+  let count = 0;
+
+  square.onclick = function(){ // Здесь мы передаем событие, ограничивающее клик по квадрату до 3х раз
+      if(count === 3){
+        square.onclick= null;
+          return;
+      }
+
+      count++;
+      console.log('Вы кликнули на квадрат');
+  } //устаревший способ
+
+  square.addEventListener('click', function /*передаем функцию, которая будет обрабатывать события*/ (){
+      console.log('Кликаю по квадрату');
+  });
+
+  //можно создать функцию отдельно
+  let clicked = function(){
+      count++;
+      if(count === 3) square.removeEventListener('click', clicked); //после 3 нажатия на квадрат, мы удалим обработчик события кликд
+      console.log('один раз кликаю по квадрату');
+  };
+
+  square.addEventListener('click', clicked);
+
+  let eventFunc = function(event){
+      console.log(event.type);
+  };
+
+  square.addEventListener('click', eventFunc);
+  square.addEventListener('mouseup', eventFunc);
+  square.addEventListener('mousedown', eventFunc);
+  square.addEventListener('mousemove', eventFunc);
   
+  square.addEventListener('mouseenter', eventFunc);
+  square.addEventListener('mouseleave', eventFunc);
+  square.addEventListener('mouseover', eventFunc);
+  square.addEventListener('mouseout', eventFunc);
+
+  //работа с формами
+
+  document.querySelector('#text').addEventListener('input'/*срабатывает всегда, когда работаем с текстом в форме*/, eventFunc);
+  document.querySelector('#text').addEventListener('change'/*срабатывает всегда, когда мы теряем фокус и значение value поменялось*/, eventFunc);

@@ -42,3 +42,4 @@ console.log(newObj);
 partChapter[5].append(newObj);
 
 console.log(tableContents3);
+
