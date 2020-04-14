@@ -37,7 +37,11 @@ let appData = {
     moneyDeposit: 0,
     resultIncomePeriod: 0,
     start: function() {
-
+        
+       if (salaryAmount.value === ''){
+            return;
+        }
+    
         appData.budget = +salaryAmount.value;
 
         appData.getExpenses();
@@ -51,6 +55,7 @@ let appData = {
         appData.getAddIncome();
         appData.budgetMonth();
         appData.budgetDay();
+        appData.getIncomePeriodValue();
         appData.showResult();
         
        
@@ -63,6 +68,8 @@ let appData = {
         additionalIncomeValue.value = appData.addIncome.join(', ');
         targetMonthValue.value = Math.ceil(appData.targetMonth());
         incomePeriodValue.value = appData.calcPeriod();
+        periodSelect.addEventListener('click', appData.getIncomePeriodValue);
+       
     },
     addExpensesBlock: function () {
         let cloneExpensesItem = expensesItems[0].cloneNode(true);
@@ -176,19 +183,15 @@ calcSavedMoney: function() {
 },
 calcPeriod: function () {
     return appData.budgetMonth() * periodSelect.value;
+},
+getIncomePeriodValue: function(){
+    incomePeriodValue.value = budgetMonthValue.value * periodSelect.value;
 }
 }
-start.addEventListener('click', appData.start);
+startButton.addEventListener('click', appData.start);
+
 expensesPlus.addEventListener('click', appData.addExpensesBlock);
 incomePlus.addEventListener('click', appData.addIncomeBlock);
 periodSelect.addEventListener('input', function () {
     periodAmount.innerHTML = periodSelect.value;
   });
-
-startButton.addEventListener('click', function(event){
-    event.preventDefault();
-    if (salaryAmount.value === ''){
-        confirm('Раздел "Месячный доход" не заполнен! Пожалуйста заполните, для продолжения работы');
-        return;
-    }
-});
